@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"/>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+      @import url(style.css);
+    </style>
+    <!-- JS per il pop-up di condivisione -->
+    <script>
+      function openSharePopup(title, link, description, imageUrl = '') {
+        const descElem = document.getElementById('popupDescription');
+        const moreBtn = document.getElementById('moreBtn');
+        const popupCard = document.getElementById('popupCard');
+
+        document.getElementById('popupTitle').textContent = title;
+        document.getElementById('popupLink').textContent = link;
+        descElem.textContent = description;
+        descElem.classList.add('text-truncate');
+        moreBtn.textContent = 'More';
+        document.getElementById('popupImage').src = imageUrl || 'https://via.placeholder.com/300';
+
+        // Mostra/nasconde il bottone "More" in base alla lunghezza della descrizione
+        moreBtn.style.display = description.length > 80 ? 'inline-block' : 'none';
+
+        // Rende cliccabile tutta la card tranne il bottone More
+        popupCard.onclick = () => {
+          window.open(link, '_blank');
+        };
+
+        // Link social
+        document.getElementById('xShare').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(link)}&text=${encodeURIComponent(title)}`;
+        document.getElementById('fbShare').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`;
+        document.getElementById('waShare').href = `https://wa.me/?text=${encodeURIComponent(title + ' ' + link)}`;
+        document.getElementById('inShare').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(link)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(description)}`;
+        document.getElementById('msShare').href = `fb-messenger://share/?link=${encodeURIComponent(link)}`;
+        document.getElementById('snapShare').href = `https://www.snapchat.com/`;
+        document.getElementById('emailShare').href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(link)}`;
+
+        window.currentShareLink = link;
+
+        const modal = new bootstrap.Modal(document.getElementById('sharePopup'));
+        modal.show();
+
+        setTimeout(updateArrows, 300);
+      }
+
+      function copyLink() {
+        navigator.clipboard.writeText(window.currentShareLink).then(() => alert("Link copiato!"));
+      }
+
+      function toggleDescription() {
+        const desc = document.getElementById('popupDescription');
+        const btn = document.getElementById('moreBtn');
+        if (desc.classList.contains('text-truncate')) {
+          desc.classList.remove('text-truncate');
+          btn.textContent = "Less";
+        } else {
+          desc.classList.add('text-truncate');
+          btn.textContent = "More";
+        }
+      }
+
+      function scrollSocials(direction) {
+        const container = document.getElementById('socialCarousel');
+        const scrollAmount = 120;
+        container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        setTimeout(updateArrows, 300);
+      }
+
+      function updateArrows() {
+        const container = document.getElementById('socialCarousel');
+        const leftArrow = document.getElementById('arrowLeft');
+        const rightArrow = document.getElementById('arrowRight');
+
+        leftArrow.style.display = container.scrollLeft > 0 ? 'flex' : 'none';
+        const atEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth - 5;
+        rightArrow.style.display = atEnd ? 'none' : 'flex';
+      }
+
+      function showArrows() {
+        updateArrows();
+      }
+
+      function hideArrows() {
+        document.getElementById('arrowLeft').style.display = 'none';
+        document.getElementById('arrowRight').style.display = 'none';
+      }
+
+      function shareNative() {
+        if (navigator.share) {
+          navigator.share({
+            title: document.getElementById('popupTitle').textContent,
+            text: document.getElementById('popupDescription').textContent,
+            url: window.currentShareLink
+          }).catch((error) => {
+            console.log("Errore condivisione nativa:", error);
+          });
+        } else {
+          alert("La condivisione nativa non è supportata da questo browser.");
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('socialCarousel');
+        container.addEventListener('scroll', updateArrows);
+      });
+    </script>
+
+
+
+    
+    <!-- JS per il pop-up del modulo contatti -->
+    <script>
+      function openModuloContatti(){
+        
+      }
+    </script>
+  </head>
+  <body class="text-center" style="background-color: black; color: white; min-height: 100vh;">
+  <div class="container py-5">
+    <div class="row flex-column align-items-center mb-0 mt-customMt">
+      <div class="col-sm-2 mb-0 ms-5">
+        <button type="button" onclick="openSharePopup('Titolo', 'https://www.speedtest.net/it', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, fugit explicabo quod, porro saepe expedita ratione vitae aperiam dolorum, id repudiandae necessitatibus maxime animi natus sunt in reprehenderit ut. Qui!', 'TemporaryLogo.png')" class="btn btn-primary w-25 rounded-5" style="margin-left: 300px;">...</button>
+      </div>
+      <div class="col-sm-4 mb-0">
+        <div class="p-3">
+          <img class="img-fluid rounded-circle w-25" src="TemporaryLogo.png" alt="">
+          <h5>@Shaidend</h5>
+          <p style="color: gray;">Developer - Gamer - 17yo</p>
+          <ul class="example-2">
+                    <li class="icon-content">
+                    <a href="https://discord.gg/" aria-label="Discord" data-social="discord">
+                        <div class="filled"></div>
+                        <svg
+                        viewBox="0 0 16 16"
+                        class="bi bi-discord"
+                        fill="currentColor"
+                        height="16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
+                        ></path>
+                        </svg>
+                    </a>
+                    <div class="tooltip">Vid</div>
+                    </li>
+                    <li class="icon-content">
+                        <a href="https://github.com/" aria-label="GitHub" data-social="github">
+                          <div class="filled"></div>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-github"
+                            viewBox="0 0 16 16"
+                            xml:space="preserve"
+                          >
+                            <path
+                              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                              fill="currentColor"
+                            ></path>
+                          </svg>
+                        </a>
+                        <div class="tooltip">Shaidend</div>
+                    </li>
+                    <li class="icon-content">
+                      <a href="https://www.youtube.com/@" aria-label="Youtube" data-social="youtube">
+                        <div class="filled"></div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-youtube"
+                          viewBox="0 0 16 16"
+                          xml:space="preserve"
+                        >
+                          <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </a>
+                      <div class="tooltip">ShaidenD</div>
+                    </li>
+                    <li class="icon-content">
+                        <a
+                          href="https://www.twitch.tv/"
+                          aria-label="Twitch"
+                          data-social="twitch"
+                        >
+                          <div class="filled"></div>
+                          <svg version="1.1" viewBox="0 0 100 100">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M391.2 103.5H352.5v109.7h38.6zM285 103H246.4V212.8H285zM120.8 0 24.3 91.4V420.6H140.1V512l96.5-91.4h77.3L487.7 256V0zM449.1 237.8l-77.2 73.1H294.6l-67.6 64v-64H140.1V36.6H449.1z"/></svg>
+                          </svg>
+                        </a>
+                        <div class="tooltip">shaiden19</div>
+                    </li>
+                </ul>
+        </div>
+      </div>
+      <div class="centralColumn col-sm-4 mb-0" style="width: 60%;">
+        <div class="centralInnerColumn p-3" style="width: 80%; margin-left: 85px;">
+          <a href="https://www.instagram.com/david_cp_07" style="text-decoration: none;">
+            <div class="contentColumn row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4" id="linkBlock" style="height: 70px;" data-link="https://www.instagram.com/david_cp_07">
+              <div class="col-sm-4">
+                <img src="FotoIg.jpg" alt="error" class="img-fluid rounded-4" style="width: 50%; margin-left: -185px; padding: 5px;">
+              </div>
+              <div class="col-sm-4">
+                <h5 class="mb-0">Social</h5>
+              </div>
+              <div class="col-sm-4 text-end">
+                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Titolo', 'https://www.instagram.com/david_cp_07', 'Description', 'FotoIg.jpg')" class="btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
+              </div>
+            </div>
+          </a>
+          <a href="" style="text-decoration: none;">
+            <div class="row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4 mt-3" id="linkBlock" style="height: 70px;">
+              <div class="col-sm-4">
+                <img src="MySetUp3.jpg" alt="error" class="img-fluid rounded-4" style="width: 50%; margin-left: -185px; padding: 5px;">
+              </div>
+              <div class="col-sm-4">
+                <h5 class="mb-0">Made by me</h5>
+              </div>
+              <div class="col-sm-4 text-end">
+                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare2 Link', 'https://www.speedtest.net/it', 'Descrizione 3', 'FotoIg.jpg')" class="btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
+              </div>
+            </div>
+          </a>
+          <a href="https://discord.gg/5NGVAmKq" style="text-decoration: none;">
+            <div class="row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4 mt-3" id="linkBlock" style="height: 70px;">
+              <div class="col-sm-4">
+                <img src="ServerDs.png" alt="error" class="img-fluid rounded-4" style="width: 50%; margin-left: -185px; padding: 5px;">
+              </div>
+              <div class="col-sm-4">
+                <h5 class="mb-0">Server Discord</h5>
+              </div>
+              <div class="col-sm-4 text-end">
+                
+                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare1 Link', 'https://discord.gg/5NGVAmKq', 'Descrizione 2:', 'ServerDs.png')" class="btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
+              </div>
+            </div>
+          </a>
+          <a href="" style="text-decoration: none;">
+            <div class="row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4 mt-3" id="linkBlock" style="height: 70px;">
+              <div class="col-sm-4">
+                <img src="Social.png" alt="error" class="img-fluid rounded-4" style="width: 50%; margin-left: -185px; padding: 5px;">
+              </div>
+              <div class="col-sm-4">
+                <h5 class="mb-0" style="width: max;">More about me</h5>
+              </div>
+              <div class="col-sm-4 text-end">
+                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare1 Link', 'https://discord.gg/5NGVAmKq', 'Descrizione 2')" class="btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-2 mt-5">
+        <div class="p-0 me-5">
+          <label for="btn-moduloContatti" class="" style="width: max-content;">If you wanna realize a project:</label>
+          <button type="button" id="btn-moduloContatti" onclick="openModuloContatti()" class="btn btn-primary rounded-5" style="width: 150%; height: 50px; margin-left: -10px;">
+            Send me your request
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Gestione pop-up -->
+  <!-- MODAL di condivisione -->
+  <div id="sharePopup" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-3" style="border-radius: 20px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-dark">Share link</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Card centrale cliccabile -->
+          <div id="popupCard" class="p-3 mb-4" style="background-color: #4b2c28; color: white; border-radius: 20px; cursor: pointer;">
+            <img id="popupImage" src="" alt="Preview" class="img-fluid mb-3 rounded" style="max-height: 150px;">
+            <h5 id="popupTitle" class="fw-bold">insert name</h5>
+            <p id="popupLink" class="text-white-50 mb-1">insert link</p>
+            <p id="popupDescription" class="text-white-50 mb-0 text-truncate">insert description</p>
+            <button id="moreBtn" class="btn btn-light btn-sm mt-2" onclick="event.stopPropagation(); toggleDescription()">More</button>
+          </div>
+
+          <!-- Social share carousel -->
+          <div class="social-wrapper position-relative" onmouseover="showArrows()" onmouseleave="hideArrows()">
+            <button id="arrowLeft" class="carousel-btn left" onclick="scrollSocials(-4)">‹</button>
+
+            <div class="d-flex overflow-auto gap-3 px-5 py-2 social-carousel" id="socialCarousel" onscroll="updateArrows()">
+              <button onclick="copyLink()" class="btn btn-light rounded-circle" title="Copy link">
+                <i class="bi bi-link-45deg fs-4"></i>
+              </button>
+              <a id="xShare" target="_blank" class="btn btn-dark rounded-circle" title="X">
+                <i class="bi bi-twitter-x fs-4"></i>
+              </a>
+              <a id="fbShare" target="_blank" class="btn btn-primary rounded-circle" title="Facebook">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+              <a id="waShare" target="_blank" class="btn btn-success rounded-circle" title="WhatsApp">
+                <i class="bi bi-whatsapp fs-4"></i>
+              </a>
+              <a id="inShare" target="_blank" class="btn btn-primary rounded-circle" title="LinkedIn">
+                <i class="bi bi-linkedin fs-4"></i>
+              </a>
+              <a id="msShare" target="_blank" class="btn btn-info rounded-circle" title="Messenger">
+                <i class="bi bi-messenger fs-4"></i>
+              </a>
+              <a id="snapShare" target="_blank" class="btn btn-warning rounded-circle" title="Snapchat">
+                <i class="bi bi-snapchat fs-4"></i>
+              </a>
+              <a id="emailShare" href="#" class="btn btn-secondary rounded-circle" title="Email">
+                <i class="bi bi-envelope fs-4"></i>
+              </a>
+              <button onclick="shareNative()" class="btn btn-dark rounded-circle" title="Altro">
+                <i class="bi bi-share-fill fs-4"></i>
+              </button>
+            </div>
+
+            <button id="arrowRight" class="carousel-btn right" onclick="scrollSocials(4)">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
