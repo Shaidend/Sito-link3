@@ -135,7 +135,7 @@
 
    
   </head>
-  <body class="text-center" style="background-color: black; color: white; min-height: 100vh;">
+  <body class="zium text-center" style="background-color: black; color: white; min-height: 100vh;">
   <div class="container py-5 mb-5">
     <div class="row flex-column align-items-center mb-0 mt-customMt">
       <div class="col-sm-2 mb-0 ms-5">
@@ -224,9 +224,9 @@
       <div class="centralColumn col-sm-4 mb-0">
         <div class="centralInnerColumn p-3">
           <a href="https:" style="text-decoration: none;">
-            <div class="contentColumn row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4" id="linkBlock" data-link="https:">
+            <div class="contentColumn row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4" id="linkBlock">
               <div class="col-sm-4">
-                <img src="TemporaryLogo.png" alt="error" class="miniFoto img-fluid rounded-4">
+                <img src="FotoIg.jpg" alt="error" class="miniFoto img-fluid rounded-4">
               </div>
               <div class="col-sm-4">
                 <h5 class="mb-0 scritta">Social</h5>
@@ -239,40 +239,40 @@
           <a href="" style="text-decoration: none;">
             <div class="contentColumn row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4 mt-3" id="linkBlock">
               <div class="col-sm-4">
-                <img src="TemporaryLogo.png" alt="error" class="miniFoto img-fluid rounded-4">
+                <img src="MySetUp3.jpg" alt="error" class="miniFoto img-fluid rounded-4">
               </div>
               <div class="col-sm-4">
                 <h5 class="mb-0 scritta">Made by me</h5>
               </div>
               <div class="col-sm-4 text-end">
-                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare2 Link', 'https://www.speedtest.net/it', 'Descrizione 3', 'FotoIg.jpg')" class="btnShareLink btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
+                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare2 Link', 'Sorry the link is still working progress', 'Descrizione 3', 'FotoIg.jpg')" class="btnShareLink btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
               </div>
             </div>
           </a>
-          <a href="https:" style="text-decoration: none;">
+          <a href="https://discord.gg/5NGVAmKq" style="text-decoration: none;">
             <div class="contentColumn row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4 mt-3" id="linkBlock">
               <div class="col-sm-4">
-                <img src="TemporaryLogo.png" alt="error" class="miniFoto img-fluid rounded-4">
+                <img src="ServerDs.png" alt="error" class="miniFoto img-fluid rounded-4">
               </div>
               <div class="col-sm-4">
                 <h5 class="mb-0 scritta2" style="width: max-content;">Server Discord</h5>
               </div>
               <div class="col-sm-4 text-end">
                 
-                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare1 Link', 'https:', 'Descrizione 2:', 'ServerDs.png')" class="btnShareLink btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
+                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare1 Link', 'https://discord.gg/5NGVAmKq', 'Descrizione 2:', 'ServerDs.png')" class="btnShareLink btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
               </div>
             </div>
           </a>
           <a href="" style="text-decoration: none;">
             <div class="contentColumn row align-items-center bg-customCol ps-5 pe-5 py-0 w-100 rounded-4 mt-3" id="linkBlock">
               <div class="col-sm-4">
-                <img src="TemporaryLogo.png" alt="error" class="miniFoto img-fluid rounded-4">
+                <img src="Social.png" alt="error" class="miniFoto img-fluid rounded-4">
               </div>
               <div class="col-sm-4">
                 <h5 class="mb-0 scritta2" style="width: max-content;">More about me</h5>
               </div>
               <div class="col-sm-4 text-end">
-                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare1 Link', 'https://discord.gg/5NGVAmKq', 'Descrizione 2')" class="btnShareLink btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
+                <button type="button" onclick=" event.stopPropagation(); event.preventDefault(); openSharePopup('Mbare1 Link', 'Sorry link is still work in progress', 'Descrizione 2')" class="btnShareLink btn btn-success rounded-circle" style="margin-right: -50px;">⁞</button>
               </div>
             </div>
           </a>
@@ -358,18 +358,23 @@
 
     <!-- FORM CONTENUTO -->
     <div class="form-container">
-      <form action="https://formspree.io/f/xyourid" method="POST" class="form">
-        <div class="form-group">
-          <label for="email" class="forEmail">Company Email</label>
-          <input type="text" id="email" name="email" required="">
-        </div>
-        <div class="form-group">
-          <label for="textarea" class="forText">How Can We Help You?</label>
-          <textarea name="textarea" id="textarea" rows="10" cols="50" required=""></textarea>
-        </div>
-        <button class="form-submit-btn" type="submit">Submit</button>
-      </form>
+  <form action="https://formspree.io/f/xyourid" method="POST" class="form">
+    <!-- Campi nascosti per evitare il redirect -->
+    <input type="hidden" name="_next" value="https://tuosito.com/grazie.html">
+    <input type="hidden" name="_subject" value="Nuovo messaggio dal sito">
+    <input type="hidden" name="_captcha" value="false">
+    
+    <div class="form-group">
+      <label for="email" class="forEmail">Company Email</label>
+      <input type="email" id="email" name="email" required="@">
     </div>
+    <div class="form-group">
+      <label for="textarea" class="forText">How Can We Help You?</label>
+      <textarea name="message" id="textarea" rows="10" cols="50" required="@"></textarea>
+    </div>
+    <button class="form-submit-btn" type="submit">Submit</button>
+  </form>
+</div>
   </div>
 </div>
 

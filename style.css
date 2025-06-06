@@ -519,7 +519,7 @@ html{
 }
 .contentColumn{
   height: 70px;
-  margin-top: 0px;
+  margin-top: -20px;
 }
 .miniFoto{
   width: 50%; 
