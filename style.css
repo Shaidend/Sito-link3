@@ -432,7 +432,7 @@ ul {
 
 @media (min-width: 320px) {
   #btn-moduloContatti {
-    width: 95%;
+    width: max-content;
     height: 50px;
     margin-left: 0px;
   }
