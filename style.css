@@ -430,6 +430,22 @@ ul {
 }
 
 
+@media (min-width: 320px) {
+  #btn-moduloContatti {
+    width: 55%;
+    height: 50px;
+    margin-left: 0px;
+  }
+
+  .body-custom {
+    margin-top: 10px;
+  }
+
+  .zium {
+    margin-top: -15px;
+  }
+}
+
 @media (max-width: 425px) {
   #btn-moduloContatti {
     width: 55%;
