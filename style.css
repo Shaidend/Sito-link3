@@ -404,7 +404,7 @@ ul {
 
 @media (min-width: 320px) {
 
-  
+
   #btn-moduloContatti {
     width: 65% !important;
     height: 50px;
@@ -412,20 +412,20 @@ ul {
   }
 
   .form-container {
-  width: 250px !important;
-  background: linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
-  font-family: inherit;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-}
+    width: 250px !important;
+    background: linear-gradient(#212121, #212121) padding-box,
+      linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
 
   .body-custom {
     margin-top: 10px;
@@ -445,20 +445,20 @@ ul {
   }
 
   .form-container {
-  width: 305px !important;
-  background: linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
-  font-family: inherit;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-}
+    width: 305px !important;
+    background: linear-gradient(#212121, #212121) padding-box,
+      linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
 
   .body-custom {
     margin-top: 10px;
@@ -477,20 +477,20 @@ ul {
   }
 
   .form-container {
-  width: 300px ;
-  background: linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
-  font-family: inherit;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-}
+    width: 300px;
+    background: linear-gradient(#212121, #212121) padding-box,
+      linear-gradient(145deg, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
 
   .body-custom {
     margin-top: 10px;
@@ -502,9 +502,6 @@ ul {
 }
 
 @media (min-width: 768px) {
-  body{
-    overflow-y: hidden;
-  }
   #btn-moduloContatti {
     width: 55% !important;
     height: 50px;
@@ -512,23 +509,24 @@ ul {
   }
 
   .form-container {
-  width: 455px !important;
-  background: linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
-  font-family: inherit;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-}
+    width: 455px !important;
+    background: linear-gradient(#212121, #212121) padding-box,
+      linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
 
   .body-custom {
     margin-top: 15px;
+    overflow-y: hidden;
   }
 
   .zium {
@@ -537,9 +535,6 @@ ul {
 }
 
 @media (min-width: 1024px) {
-  body{
-    margin-top: -10px !important;
-  }
   #btn-moduloContatti {
     width: 45%;
     height: 50px;
@@ -548,20 +543,20 @@ ul {
   }
 
   .form-container {
-  width: 450px !important;
-  background: linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
-  font-family: inherit;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-}
+    width: 450px !important;
+    background: linear-gradient(#212121, #212121) padding-box,
+      linear-gradient(145deg, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
 
   .body-custom {
     margin-top: 15px !important;
@@ -569,17 +564,18 @@ ul {
 
   .zium {
     margin-top: -15px;
-    transition: transform 0.3s ease; /* Transizione fluida */
   }
-  .zium:hover {
+
+  .link-card {
+    transition: transform 0.3s ease;
+  }
+
+  .link-card:hover {
     transform: scale(1.2);
   }
 }
 
 @media (min-width: 1050px) {
-  body{
-    margin-top: 0px !important;
-  }
   #btn-moduloContatti {
     width: 45%;
     height: 50px;
@@ -587,28 +583,35 @@ ul {
   }
 
   .form-container {
-  width: 400px;
-  background: linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
-  font-family: inherit;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-}
+    width: 400px;
+    background: linear-gradient(#212121, #212121) padding-box,
+      linear-gradient(145deg, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
 
   .btnShareSite {
     margin-top: 5px;
   }
+
   .zium {
-    transition: transform 0.3s ease; /* Transizione fluida */
+    transition: transform 0.3s ease;
+    /* Transizione fluida */
   }
-  .zium:hover {
+
+  .link-card {
+    transition: transform 0.3s ease;
+  }
+
+  .link-card:hover {
     transform: scale(1.2);
   }
 }
