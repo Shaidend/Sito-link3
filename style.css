@@ -201,21 +201,7 @@ ul {
 
 
 
-.form-container {
-  width: 400px;
-  background: linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
-  font-family: inherit;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-}
+
 
 
 .form-container button:active {
@@ -425,7 +411,7 @@ ul {
   }
 
   .form-container {
-  width: 230px !important;
+  width: 250px !important;
   background: linear-gradient(#212121, #212121) padding-box,
     linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
   border: 2px solid transparent;
@@ -449,12 +435,29 @@ ul {
   }
 }
 
-@media (max-width: 425px) {
+@media (min-width: 375px) {
+
   #btn-moduloContatti {
-    width: 55%;
+    width: 65% !important;
     height: 50px;
     margin-left: 0px;
   }
+
+  .form-container {
+  width: 305px !important;
+  background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
 
   .body-custom {
     margin-top: 10px;
@@ -465,7 +468,39 @@ ul {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) {
+  #btn-moduloContatti {
+    width: 55%;
+    height: 50px;
+    margin-left: 0px;
+  }
+
+  .form-container {
+  width: 300px ;
+  background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(145deg, #e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+  .body-custom {
+    margin-top: 10px;
+  }
+
+  .zium {
+    margin-top: -15px;
+  }
+}
+
+@media (min-width: 768px) {
   #btn-moduloContatti {
     width: 55% !important;
     height: 50px;
@@ -473,7 +508,7 @@ ul {
   }
 
   .form-container {
-  width: 355px !important;
+  width: 455px !important;
   background: linear-gradient(#212121, #212121) padding-box,
     linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
   border: 2px solid transparent;
@@ -497,13 +532,29 @@ ul {
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   #btn-moduloContatti {
     width: 45%;
     height: 50px;
     margin-left: 0px;
     margin-top: -10px;
   }
+
+  .form-container {
+  width: 450px !important;
+  background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(145deg, #e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
 
   .body-custom {
     margin-top: 25px !important;
@@ -520,6 +571,22 @@ ul {
     height: 50px;
     margin-left: 0px;
   }
+
+  .form-container {
+  width: 400px;
+  background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(145deg, #e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
 
   .btnShareSite {
     margin-top: 5px;
