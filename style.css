@@ -537,6 +537,9 @@ ul {
 }
 
 @media (min-width: 1024px) {
+  body{
+    margin-top: -10px !important;
+  }
   #btn-moduloContatti {
     width: 45%;
     height: 50px;
@@ -570,6 +573,9 @@ ul {
 }
 
 @media (min-width: 1050px) {
+  body{
+    margin-top: 0px !important;
+  }
   #btn-moduloContatti {
     width: 45%;
     height: 50px;
