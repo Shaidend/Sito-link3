@@ -404,6 +404,7 @@ ul {
 
 @media (min-width: 320px) {
 
+  
   #btn-moduloContatti {
     width: 65% !important;
     height: 50px;
@@ -501,6 +502,9 @@ ul {
 }
 
 @media (min-width: 768px) {
+  body{
+    overflow-y: hidden;
+  }
   #btn-moduloContatti {
     width: 55% !important;
     height: 50px;
