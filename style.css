@@ -564,11 +564,15 @@ ul {
 }
 
   .body-custom {
-    margin-top: 25px !important;
+    margin-top: 15px !important;
   }
 
   .zium {
     margin-top: -15px;
+    transition: transform 0.3s ease; /* Transizione fluida */
+  }
+  .zium:hover {
+    transform: scale(1.2);
   }
 }
 
@@ -600,5 +604,11 @@ ul {
 
   .btnShareSite {
     margin-top: 5px;
+  }
+  .zium {
+    transition: transform 0.3s ease; /* Transizione fluida */
+  }
+  .zium:hover {
+    transform: scale(1.2);
   }
 }
